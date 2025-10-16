@@ -1,0 +1,373 @@
+[
+  {
+    "id": 1,
+    "question": "What is the accounting equation?",
+    "options": [
+      "Assets = Liabilities + Equity",
+      "Assets = Liabilities - Equity",
+      "Assets + Liabilities = Equity",
+      "Revenue - Expenses = Profit"
+    ],
+    "correct": 0,
+    "difficulty": "Easy",
+    "explanation": "The fundamental accounting equation states that Assets = Liabilities + Owner's Equity. This equation must always balance."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following is a current asset?",
+    "options": [
+      "Building",
+      "Equipment",
+      "Accounts Receivable",
+      "Patent"
+    ],
+    "correct": 2,
+    "difficulty": "Easy",
+    "explanation": "Accounts Receivable is a current asset because it's expected to be converted to cash within one year."
+  },
+  {
+    "id": 3,
+    "question": "What type of account is 'Accounts Payable'?",
+    "options": [
+      "Asset",
+      "Liability",
+      "Revenue",
+      "Expense"
+    ],
+    "correct": 1,
+    "difficulty": "Easy",
+    "explanation": "Accounts Payable represents money owed to suppliers, making it a liability."
+  },
+  {
+    "id": 4,
+    "question": "Which financial statement shows a company's financial position at a specific point in time?",
+    "options": [
+      "Income Statement",
+      "Cash Flow Statement",
+      "Balance Sheet",
+      "Statement of Retained Earnings"
+    ],
+    "correct": 2,
+    "difficulty": "Easy",
+    "explanation": "The Balance Sheet shows the company's assets, liabilities, and equity at a specific date."
+  },
+  {
+    "id": 5,
+    "question": "What is the normal balance for a Revenue account?",
+    "options": [
+      "Debit",
+      "Credit",
+      "Zero",
+      "Either debit or credit"
+    ],
+    "correct": 1,
+    "difficulty": "Easy",
+    "explanation": "Revenue accounts have a normal credit balance. Increases in revenue are recorded as credits."
+  },
+  {
+    "id": 6,
+    "question": "If a company pays cash for office supplies, what happens to the accounting equation?",
+    "options": [
+      "Assets increase, Liabilities increase",
+      "Assets decrease, Equity decreases",
+      "One asset increases, another asset decreases",
+      "Liabilities decrease, Equity increases"
+    ],
+    "correct": 2,
+    "difficulty": "Medium",
+    "explanation": "Cash (asset) decreases while Office Supplies (asset) increases by the same amount, keeping the equation balanced."
+  },
+  {
+    "id": 7,
+    "question": "What is depreciation?",
+    "options": [
+      "The increase in value of an asset over time",
+      "The allocation of an asset's cost over its useful life",
+      "The sale of an asset below its cost",
+      "The repair cost of an asset"
+    ],
+    "correct": 1,
+    "difficulty": "Easy",
+    "explanation": "Depreciation is the systematic allocation of an asset's cost over its estimated useful life."
+  },
+  {
+    "id": 8,
+    "question": "Which principle requires expenses to be recorded in the same period as the related revenue?",
+    "options": [
+      "Revenue Recognition Principle",
+      "Matching Principle",
+      "Cost Principle",
+      "Full Disclosure Principle"
+    ],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "The Matching Principle requires that expenses be matched with the revenues they help generate in the same accounting period."
+  },
+  {
+    "id": 9,
+    "question": "Calculate the debt-to-equity ratio if a company has $500,000 in total debt and $1,200,000 in shareholders' equity.",
+    "options": [
+      "0.24",
+      "0.42",
+      "2.40",
+      "0.83"
+    ],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Debt-to-equity ratio = Total Debt ÷ Shareholders' Equity = $500,000 ÷ $1,200,000 = 0.42"
+  },
+  {
+    "id": 10,
+    "question": "A company has a quick ratio of 1.5, current liabilities of $200,000, and inventory of $50,000. What are the quick assets?",
+    "options": [
+      "$250,000",
+      "$300,000",
+      "$350,000",
+      "$400,000"
+    ],
+    "correct": 1,
+    "difficulty": "Hard",
+    "explanation": "Quick ratio = Quick Assets ÷ Current Liabilities. Therefore: Quick Assets = 1.5 × $200,000 = $300,000"
+  },
+  {
+    "id": 11,
+    "question": "If a company uses the FIFO method during inflation, compared to LIFO, its reported net income will be:",
+    "options": [
+      "Higher",
+      "Lower",
+      "The same",
+      "Cannot be determined"
+    ],
+    "correct": 0,
+    "difficulty": "Hard",
+    "explanation": "During inflation, FIFO results in lower cost of goods sold (older, cheaper costs) and therefore higher net income compared to LIFO."
+  },
+  {
+    "id": 12,
+    "question": "What is working capital?",
+    "options": [
+      "Current Assets - Current Liabilities",
+      "Total Assets - Total Liabilities",
+      "Cash + Investments",
+      "Revenue - Expenses"
+    ],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "Working capital measures a company's short-term financial health and is calculated as Current Assets minus Current Liabilities."
+  },
+  {
+    "id": 13,
+    "question": "Under accrual accounting, revenue is recognized when:",
+    "options": [
+      "Cash is received",
+      "Services are performed or goods are delivered",
+      "The invoice is sent",
+      "Payment is due"
+    ],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Under accrual accounting, revenue is recognized when it is earned (services performed or goods delivered), regardless of when cash is received."
+  },
+  {
+    "id": 14,
+    "question": "A company purchased equipment for $100,000 with a 10-year useful life and $10,000 salvage value. Using straight-line depreciation, what is the annual depreciation expense?",
+    "options": [
+      "$9,000",
+      "$10,000",
+      "$90,000",
+      "$100,000"
+    ],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "Annual depreciation = (Cost - Salvage Value) ÷ Useful Life = ($100,000 - $10,000) ÷ 10 = $9,000"
+  },
+  {
+    "id": 15,
+    "question": "What does 'double-entry bookkeeping' mean?",
+    "options": [
+      "Recording transactions twice for accuracy",
+      "Every transaction affects at least two accounts",
+      "Keeping two sets of books",
+      "Recording debits and credits separately"
+    ],
+    "correct": 1,
+    "difficulty": "Easy",
+    "explanation": "Double-entry bookkeeping means every transaction affects at least two accounts, with total debits equaling total credits."
+  },
+  {
+    "id": 16,
+    "question": "Stacy's, Inc. provides the following selected balance sheet amounts at the end of the previous two years. What is the value of the current assets at the end of year 1?",
+    "options": ["$120,000", "$145,000", "$310,000", "none of the above"],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Using the accounting equation, Current Assets = Total Assets - Noncurrent Assets. From year 1: $265,000 - $120,000 = $145,000."
+  },
+  {
+    "id": 17,
+    "question": "American Advanced Drones, Inc. is a trading firm and bought $10,000 worth of trading merchandize during the month of September. The firm had no balance in inventories account on September 1 because September was the first month of its operations. The firm determined that the balance in inventory on hand at September 30 was $2,000, valued on cost basis. The firm also billed its customers $22,000 for sales made during the month of September. How much should it recognize as cost of goods sold (COGS) expense during the month of September?",
+    "options": ["$8,000", "$10,000", "$22,000", "$12,000", "$14,000", "none of the above"],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "COGS = Beginning Inventory + Purchases - Ending Inventory = $0 + $10,000 - $2,000 = $8,000."
+  },
+  {
+    "id": 18,
+    "question": "Wildcats, Inc. engaged in the following transactions during the month of September: Revenues = $20,000, Cost of goods sold (COGS) expense = $6,000, Selling, general & administrative (SG&A) expenses = $2,000, Dividends paid during the month of September $1,000, Cash borrowed during the month of September $5,000. What is the net income for the month?",
+    "options": ["$28,000", "$14,000", "$21,000", "$12,000", "$26,000", "none of the above"],
+    "correct": 3,
+    "difficulty": "Medium",
+    "explanation": "Net Income = Revenues - COGS - SG&A expenses = $20,000 - $6,000 - $2,000 = $12,000. Dividends and borrowing don't affect net income."
+  },
+  {
+    "id": 19,
+    "question": "Wildcats, Inc. reported the following balances at the end of September: Total assets = $42,000, Accounts payable = $10,000, Loans Payable = $4,000, Contributed Capital = $16,000, Retained Earnings = $12,000. What was the total shareholders equity on 9/31?",
+    "options": ["$28,000", "$38,000", "$42,000", "$14,000", "$32,000", "none of the above"],
+    "correct": 0,
+    "difficulty": "Easy",
+    "explanation": "Shareholders' Equity = Contributed Capital + Retained Earnings = $16,000 + $12,000 = $28,000."
+  },
+  {
+    "id": 20,
+    "question": "Wildcats, Inc. reported the following balances at the end of September: Total assets = $52,000, Total liabilities = $14,000, Contributed Capital = $16,000. What was the balance in retained earnings account on 9/31?",
+    "options": ["$22,000", "$38,000", "$42,000", "$14,000", "$32,000", "none of the above"],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "Using the accounting equation: Assets = Liabilities + Equity. Equity = $52,000 - $14,000 = $38,000. Retained Earnings = Total Equity - Contributed Capital = $38,000 - $16,000 = $22,000."
+  },
+  {
+    "id": 21,
+    "question": "On January 1, 2025, as part of a special promotion, A.J. Smith sold a digital camera (retail price, on a stand-alone basis, $200), a digital photograph printer (retail price, on a stand-alone basis, $100), and an extended warranty contract for the camera (total retail price, on a stand-alone basis, $100) as a package for a special combined price of $300. The extended warranty covers the period from the beginning of 2026 through the end of 2027. The cameras came with the original warranty of one year from the date of the sale and the extended warranties begin after the expiry of the original warranty offered by the manufacturers of the camera. The company sold 200 of these camera-printer packages. Compute the revenue that A.J. Smith should recognize in 2025.",
+    "options": ["58,000", "none of the above", "34,800", "60,000", "38,133", "45,000"],
+    "correct": 5,
+    "difficulty": "Hard",
+    "explanation": "Revenue is allocated based on standalone selling prices. Camera + Printer = $300 × 200 = $60,000 can be recognized immediately. Extended warranty revenue is deferred as it covers 2026-2027. Total immediate revenue = $45,000."
+  },
+  {
+    "id": 22,
+    "question": "American Advanced Supercomputers, Inc. sold a GPU-based supercomputer on January 1, 2025 for $20 million to a major pharma firm. It also sold software as a subscription service separately. This latter subscription service binds the firm to offer software related services, beginning January 1, 2025 until the end of year 2026. The firm received $3 million in cash from its customer as the price on March 31, 2025; this price covers the entire period of two years for the software license use, beginning from 1/1/2025. Determine the revenues that American Advanced Supercomputers should recognize for the year ended 12/31/2025.",
+    "options": ["$21.5 million", "$30 million", "$3 million", "None of the above", "$23 million"],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "Hardware sale: $20 million recognized immediately. Software subscription: $3 million over 2 years = $1.5 million per year. Total for 2025: $20M + $1.5M = $21.5 million."
+  },
+  {
+    "id": 23,
+    "question": "Kellogg Associates Limited (KAL) reported following data (in $ thousands): Prepaid Insurance balance 12/31/2025: $800, 12/31/2024: $900. Assuming that KAL paid cash of $1,200 towards insurance premium during the year ended 12/31/2025, determine the insurance expense the firm would have recognized during the year ended 12/31/2025.",
+    "options": ["$1,300", "$5,000", "$1,200", "$300", "$800", "none of the above"],
+    "correct": 0,
+    "difficulty": "Medium",
+    "explanation": "Insurance Expense = Beginning Prepaid + Cash Paid - Ending Prepaid = $900 + $1,200 - $800 = $1,300."
+  },
+  {
+    "id": 24,
+    "question": "Kellogg Associates Limited (KAL) reported following data (in $ thousands): Wages payables balance 12/31/2025: ?, 12/31/2024: $40,000. Assuming that KAL paid wages in cash of $100,000 and recognized wages expenses of $110,000 during the year ended 12/31/2024, determine the wages payable balance on 12/31/2025.",
+    "options": ["$30,000", "$50,000", "$100,000", "$110,000", "$40,000", "none of the above"],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Ending Wages Payable = Beginning Wages Payable + Wages Expense - Cash Paid = $40,000 + $110,000 - $100,000 = $50,000."
+  },
+  {
+    "id": 25,
+    "question": "Kellogg Associates Limited (KAL) provides subscription services and that is their only line of business. The firm reported following data (in $ thousands): Unearned revenues liability balance 12/31/2025: $20,000, 12/31/2024: $10,000. KAL sells subscription services and credits unearned revenues liability account for all subscription sales. The firm recognizes revenue with passage of time as the services are presumed to be rendered to the subscribers over the subscription contract period uniformly (as in, e.g., Amazon Prime services). Assuming that KAL received cash from customers of $200,000 during the year ended 12/31/2025 towards the subscription sales, determine the revenues recognized by KAL during the year ended 12/31/2025.",
+    "options": ["$220,000", "$240,000", "$210,000", "$190,000", "$230,000", "none of the above"],
+    "correct": 3,
+    "difficulty": "Hard",
+    "explanation": "Revenue Recognized = Beginning Unearned Revenue + Cash Received - Ending Unearned Revenue = $10,000 + $200,000 - $20,000 = $190,000."
+  },
+  {
+    "id": 26,
+    "question": "Kellogg Associates Limited (KAL) borrowed $1,000 from Evanston Bank on 1/1/2025 and agreed to pay interest in cash at the end of each quarter to the bank. The Evanston Bank charges 1% of the principal sum as interest expense for each month, regardless of the number of days in a given month. The bank closes its books on a monthly basis. Determine the balance in the interest receivable account of Evanston Bank on March 31, 2025 before the receipt of cash on account of interest income. (All dollars are in thousands.)",
+    "options": ["$20", "$30", "$0", "$10", "$1,000", "none of the above"],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Interest receivable = 1% × $1,000 × 3 months = $30. The interest is paid quarterly, so 3 months of interest accumulates by March 31."
+  },
+  {
+    "id": 27,
+    "question": "KAL reported the following (in $ thousands): Accrued rent expense balance 12/31/2025: $3,000, 12/31/2024: $3,300. Assume that KAL reported rent expense of $25,000 for its fiscal year ended 12/31/2025. What amount of cash was paid to its lessor (i.e., the owner of property) for the fiscal year ended 12/31/2025?",
+    "options": ["$3,000", "$24,700", "$25,300", "$3,300", "$25,000"],
+    "correct": 2,
+    "difficulty": "Medium",
+    "explanation": "Cash Paid = Beginning Accrued Rent + Rent Expense - Ending Accrued Rent = $3,300 + $25,000 - $3,000 = $25,300."
+  },
+  {
+    "id": 28,
+    "question": "National Sports, Inc. offers online services for customers who want extensive access to collegiate sports news. Customers purchase a one-year subscription for $96, giving them access to all National Sports content. National Sports recognizes revenue from its subscription sales ratably on a twelve-month basis. National Sports closes its books monthly. For simplicity, you may assume that all new subscriptions start at the beginning of the month. At the beginning of September 2025, the company's balance in its Unearned Revenue liability was $240,000. During September 2025, National Sports received $84,000 cash for new subscriptions and recognized $96,000 in subscription revenue. What is the balance in the Unearned Revenue liability at the end of September 2025?",
+    "options": ["$240,000", "$228,000", "$176,000", "None of the other choices", "$64,000", "$216,740"],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "Ending Unearned Revenue = Beginning Balance + Cash Received - Revenue Recognized = $240,000 + $84,000 - $96,000 = $228,000."
+  },
+  {
+    "id": 29,
+    "question": "International Travel Co. (ITC) provides travel services and discounts to its members. Members must pay upfront annual subscription fee of $500 in cash to receive travel services and discounts for a year. At the beginning of January 2025, ITC had a balance in Unearned Membership Fee Revenue liability of $300,000. During the first calendar quarter of 2025, ITC recognized $200,000 in Membership Revenue, and the balance in Unearned Membership Fee Revenue on March 31, 2025 was $150,000. The firm uses the calendar year as its fiscal year. How many new subscriptions did ITC sell during the first quarter of 2025 ending on March 31, 2025?",
+    "options": ["None of the other choices", "160,000", "500", "200", "100", "300"],
+    "correct": 4,
+    "difficulty": "Medium",
+    "explanation": "Cash received = Beginning Balance + Cash from New Subscriptions - Revenue Recognized = Ending Balance. Solving: $300,000 + Cash from New - $200,000 = $150,000. Cash from New = $50,000. New subscriptions = $50,000 ÷ $500 = 100."
+  },
+  {
+    "id": 30,
+    "question": "Ms. Cindy began an art production business on July 1, 2025. She prepares monthly financial statements and uses the accrual basis of accounting. Since Ms. Cindy uses accrual basis of accounting, her accounting policy requires her to recognize all costs of supplies she uses in her painting as Cost of Goods Sold expense only at the time she sells a painting. Till then, she classifies all her inventory of canvas, paints and other materials used in painting as an asset. In which month should Ms. Cindy record the cost of the paint and canvas as an expense?",
+    "options": ["July", "October", "August", "None of the other choices", "September"],
+    "correct": 4,
+    "difficulty": "Medium",
+    "explanation": "Under accrual accounting with this policy, the cost of supplies becomes an expense when the painting is sold. The painting was sold in September, so that's when the cost should be expensed."
+  },
+  {
+    "id": 31,
+    "question": "At the end of its fiscal year, on December 31, 2025, the balance sheet of Auttami's Fine Jewelry had a debit balance in prepaid rent account of $60,000. What is the proper interpretation of this account and its balance?",
+    "options": ["Auttami's Fine Jewelry is $610,000 behind in its rent payments.", "Auttami's Fine Jewelry has paid rent in advance of consumption.", "Auttami's Fine Jewelry's landlord charges $60,000 per year to rent its premises.", "None of the other choices", "The prepaid rent balance is an accumulation of Auttami's Fine Jewelry's rent expense over 2022.", "Auttami's Fine Jewelry has a $60,000 obligation to restore the premises when vacating them."],
+    "correct": 1,
+    "difficulty": "Medium",
+    "explanation": "A debit balance in prepaid rent represents rent that has been paid in advance but not yet consumed or expensed. It's an asset representing future economic benefits."
+  },
+  {
+    "id": 32,
+    "question": "On January 1, 2025, Lakeview Company paid $24,000 rent to cover six months (January 2025 – June 2025). Lakeview Company closes its books at the end of each month. Based on these facts, the adjusting entry at the end of January 2025 should include",
+    "options": ["a credit to Prepaid Rent for $2,000", "none of the other choices", "a credit to cash for $4,000", "a credit to Prepaid Rent for $4,000", "a debit to cash for $4,000", "a debit to Prepaid Rent for $4,000"],
+    "correct": 3,
+    "difficulty": "Medium",
+    "explanation": "Monthly rent expense = $24,000 ÷ 6 months = $4,000. The adjusting entry debits Rent Expense $4,000 and credits Prepaid Rent $4,000 to recognize one month's consumption."
+  },
+  {
+    "id": 33,
+    "question": "Kimberly and Sisters reported sales of $3,000,000 for the fiscal year ended September 30, 2025. 70% of these sales were made to credit customers. The remaining sales were made to cash customers. At the beginning of the fiscal year, i.e., on October 1, 2024, Kimberly and Sisters reported a balance of $70,000 in their Accounts Receivable, net of balance in allowances for uncollectible accounts of $30,000. At the end of the fiscal year ending on September 30, 2025, Kimberly and Sisters reported a credit balance of $50,000 in their allowance for uncollectible accounts. The firm recognized $40,000 bad debts expense during the fiscal year ended September 30, 2025. The firm received $1,600,000 cash from their credit customers during the fiscal year ended September 30, 2025. Determine the net balance in the accounts receivables account (i.e., gross balance net of the balance in the allowance account) on September 30, 2025.",
+    "options": ["$1,440,000", "none of the above", "$590,000", "$600,000", "$530,000", "$1,400,000"],
+    "correct": 4,
+    "difficulty": "Hard",
+    "explanation": "Credit sales = 70% × $3,000,000 = $2,100,000. Gross AR ending = Beginning AR + Credit Sales - Collections - Write-offs. Write-offs = Beginning Allowance + Bad Debt Expense - Ending Allowance = $30,000 + $40,000 - $50,000 = $20,000. Gross AR ending = $100,000 + $2,100,000 - $1,600,000 - $20,000 = $580,000. Net AR = $580,000 - $50,000 = $530,000."
+  },
+  {
+    "id": 34,
+    "question": "On September 30, 2025 (when Famous Fashion Designers Ltd., closed its books at the end of its fiscal year), the firm had the following aging of its Accounts Receivables: Zero to 30 days: $2,400,000 (2.0% uncollectible), 31-60 days: $600,000 (10.0% uncollectible), Greater than 60 days: $500,000 (20.0% uncollectible). On October 1, 2024, Famous Fashion Designers Ltd., had a credit balance in its Allowance for Uncollectibles of $100,000, and during the year ending September 30, 2025, $200,000 in receivables were written off as uncollectible. The firm closes its books on September 30th. What should be the balance in the company's Allowance for Uncollectibles at September 30, 2025?",
+    "options": ["A debit balance of $180,000.", "None of the other choices", "A credit balance of $520,000.", "A debit balance of $312,000.", "A debit balance of $182,000.", "A credit balance of $208,000."],
+    "correct": 5,
+    "difficulty": "Hard",
+    "explanation": "Required allowance = ($2,400,000 × 2%) + ($600,000 × 10%) + ($500,000 × 20%) = $48,000 + $60,000 + $100,000 = $208,000. This is the required ending balance in the allowance account."
+  },
+  {
+    "id": 35,
+    "question": "On September 30, 2025 (when Famous Fashion Designers Ltd., closed its books at the end of its fiscal year), the firm had the following aging of its Accounts Receivables: Zero to 30 days: $2,400,000 (2.0% uncollectible), 31-60 days: $600,000 (10.0% uncollectible), Greater than 60 days: $500,000 (20.0% uncollectible). On October 1, 2024, Famous Fashion Designers Ltd., had a credit balance in its Allowance for Uncollectibles of $100,000, and during the year ending September 30, 2025, $200,000 in receivables were written off as uncollectible. The firm closes its books on September 30th. Determine the bad debts expense that the firm should recognize for the year ended September 30, 2025.",
+    "options": ["$84,000.", "$100,000.", "$308,000.", "None of the other choices", "$300,000.", "$500,000."],
+    "correct": 2,
+    "difficulty": "Hard",
+    "explanation": "Required ending allowance = $208,000. Current allowance balance before adjustment = $100,000 - $200,000 = -$100,000 (debit balance). Bad debt expense needed = $208,000 - (-$100,000) = $308,000."
+  },
+  {
+    "id": 36,
+    "question": "On September 30, 2025 (when Famous Fashion Designers Ltd., closed its books at the end of its fiscal year), the firm had the following aging of its Accounts Receivables: Zero to 30 days: $2,400,000 (2.0% uncollectible), 31-60 days: $600,000 (10.0% uncollectible), Greater than 60 days: $300,000 (20.0% uncollectible). On October 1, 2024, Famous Fashion Designers Ltd., had a credit balance in its Allowance for Uncollectibles of $150,000, and during the year ending September 30, 2025, the firm recognized bad debts expense of $200,000. The firm closes its books on September 30th. What was the amount of accounts receivables that the firm wrote off as uncollectible during the year ending September 30, 2024?",
+    "options": ["$144,000", "None of the other choices", "$300,000.", "$284,000.", "$200,000.", "$182,000."],
+    "correct": 5,
+    "difficulty": "Hard",
+    "explanation": "Required ending allowance = ($2,400,000 × 2%) + ($600,000 × 10%) + ($300,000 × 20%) = $48,000 + $60,000 + $60,000 = $168,000. Write-offs = Beginning Balance + Bad Debt Expense - Ending Balance = $150,000 + $200,000 - $168,000 = $182,000."
+  },
+  {
+    "id": 37,
+    "question": "On March 31, 2025, and June 30, 2025, Sigma and Creta AI Systems reported Accounts Receivable, net of allowance for uncollectibles, of €90 million and €100 million, respectively. The firm had €50 million and €70 million credit balances in its allowance for uncollectibles on March 31, 2025, and June 30, 2025, respectively. The firm is a leading AI infrastructure facilities provider in Europe. They close their books quarterly and their fiscal year ends on December 31st. During the second quarter ending June 30, 2025, Sigma and Creta AI Systems collected cash of €150 million from their receivables. They also recognized a bad debt expense of €40 million during the second quarter ending June 30, 2025. How much did Sigma and Creta sell on credit to their customers during the second quarter April 1 – June 30, 2025?",
+    "options": ["€200 million", "€220 million.", "None of the other choices", "€130 million.", "€140 million.", "€180 million."],
+    "correct": 0,
+    "difficulty": "Hard",
+    "explanation": "Gross AR March 31 = €90M + €50M = €140M. Gross AR June 30 = €100M + €70M = €170M. Write-offs = Beginning Allowance + Bad Debt Expense - Ending Allowance = €50M + €40M - €70M = €20M. Credit Sales = Ending Gross AR - Beginning Gross AR + Collections + Write-offs = €170M - €140M + €150M + €20M = €200M."
+  }
+]

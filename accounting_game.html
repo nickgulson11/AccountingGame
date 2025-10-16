@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 MBAi Accounting Ace - Master Your Numbers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        .container {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+        .stat {
+            text-align: center;
+            background: linear-gradient(145deg, #ffffff, #f1f5f9);
+            padding: 25px 15px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.6);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #1d4ed8);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .question-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 0 0 1px rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .question-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #059669, #10b981, #34d399);
+            border-radius: 20px 20px 0 0;
+        }
+        .question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: #1a365d;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 20px;
+        }
+        .question:before {
+            content: '💼';
+            position: absolute;
+            left: -8px;
+            top: -2px;
+            font-size: 1.2rem;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .option {
+            margin: 12px 0;
+            padding: 18px 20px;
+            background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        .option:hover {
+            background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .option.selected {
+            background: linear-gradient(145deg, #2563eb, #1d4ed8);
+            color: white;
+            border-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        .option.correct {
+            background: linear-gradient(145deg, #059669, #047857);
+            color: white;
+            border-color: #065f46;
+            animation: correctPulse 0.6s ease-out;
+        }
+        @keyframes correctPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .option.incorrect {
+            background: linear-gradient(145deg, #dc2626, #b91c1c);
+            color: white;
+            border-color: #991b1b;
+            animation: incorrectShake 0.6s ease-out;
+        }
+        @keyframes incorrectShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+        .explanation {
+            margin-top: 24px;
+            padding: 20px 24px;
+            background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #0ea5e9;
+            border-radius: 0 16px 16px 0;
+            display: none;
+            font-weight: 500;
+            line-height: 1.6;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+            position: relative;
+        }
+        .explanation:before {
+            content: '💡';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 1.2rem;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background: linear-gradient(145deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 0 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        button:hover:before {
+            left: 100%;
+        }
+        button:hover {
+            background: linear-gradient(145deg, #1d4ed8, #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+        button:disabled {
+            background: linear-gradient(145deg, #9ca3af, #6b7280);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        button:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .game-over {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+            border-radius: 20px;
+            display: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border: 1px solid #86efac;
+            position: relative;
+        }
+        .game-over:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+            border-radius: 20px 20px 0 0;
+        }
+        .final-score {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #059669;
+            margin: 24px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 1.25rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .loading:before {
+            content: '📊';
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .mode-selection {
+            margin-bottom: 40px;
+        }
+        .mode-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .mode-btn {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin: 0;
+            font-family: inherit;
+        }
+        .mode-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+        }
+        .mode-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .mode-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+        .mode-desc {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .difficulty-easy {
+            background: linear-gradient(145deg, #d1fae5, #a7f3d0);
+            color: #065f46;
+        }
+        .difficulty-medium {
+            background: linear-gradient(145deg, #fef3c7, #fde68a);
+            color: #92400e;
+        }
+        .difficulty-hard {
+            background: linear-gradient(145deg, #fee2e2, #fecaca);
+            color: #991b1b;
+        }
+        .difficulty-responsive {
+            background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+            color: #3730a3;
+        }
+        .review-page {
+            display: none;
+        }
+        .review-summary {
+            background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+            padding: 32px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border: 1px solid #cbd5e1;
+            position: relative;
+        }
+        .review-summary:before {
+            content: '📋';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .review-summary h3 {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .review-item {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .review-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .review-item.correct {
+            border-color: #10b981;
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+        }
+        .review-item.correct:before {
+            content: '✅';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .review-item.incorrect {
+            border-color: #f87171;
+            background: linear-gradient(145deg, #fef2f2, #fee2e2);
+        }
+        .review-item.incorrect:before {
+            content: '❌';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .review-question {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a365d;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        .review-answers {
+            margin-bottom: 10px;
+        }
+        .review-your-answer {
+            padding: 16px 20px;
+            margin: 8px 0;
+            border-radius: 12px;
+            font-weight: 500;
+            border: 2px solid #e2e8f0;
+            background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+        }
+        .review-correct-answer {
+            padding: 16px 20px;
+            margin: 8px 0;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #d1fae5, #a7f3d0);
+            border: 2px solid #10b981;
+            font-weight: 500;
+            position: relative;
+        }
+        .review-correct-answer:before {
+            content: '✅';
+            margin-right: 8px;
+        }
+        .review-incorrect-answer {
+            background: linear-gradient(145deg, #fee2e2, #fecaca);
+            border: 2px solid #f87171 !important;
+            position: relative;
+        }
+        .review-incorrect-answer:before {
+            content: '❌';
+            margin-right: 8px;
+        }
+        .review-explanation {
+            margin-top: 20px;
+            padding: 20px 24px;
+            background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #0ea5e9;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            line-height: 1.6;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+            position: relative;
+        }
+        .review-explanation:before {
+            content: '💡';
+            position: absolute;
+            top: -8px;
+            left: -12px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 1.2rem;
+        }
+        .retry-section {
+            background: linear-gradient(145deg, #fffbeb, #fef3c7);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+            position: relative;
+        }
+        .retry-section:before {
+            content: '🔄';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .missed-questions-count {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #d97706;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+        .retry-mode {
+            display: none;
+        }
+        .retry-header {
+            background: linear-gradient(145deg, #f59e0b, #d97706);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+            position: relative;
+        }
+        .retry-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706);
+            border-radius: 16px 16px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="ProfSri.png" alt="Prof Sri" style="width: 80px; height: 80px; border-radius: 50%; border: 4px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.15); margin-right: 20px;">
+            <div>
+                <h1 style="margin: 0;">📊 MBAi Accounting Ace</h1>
+                <div style="font-size: 1.1rem; color: #64748b; font-weight: 500; margin-top: 8px;">Master the fundamentals with Prof Sri</div>
+            </div>
+        </div>
+
+        <div class="mode-selection" id="mode-selection" style="display: none;">
+            <h3 style="text-align: center; margin-bottom: 25px; color: #1a365d;">Choose Your Challenge Level</h3>
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="startGame('Easy')">
+                    <div class="mode-icon">🟢</div>
+                    <div class="mode-title">Easy</div>
+                    <div class="mode-desc">Basic concepts & fundamentals</div>
+                </button>
+                <button class="mode-btn" onclick="startGame('Medium')">
+                    <div class="mode-icon">🟡</div>
+                    <div class="mode-title">Medium</div>
+                    <div class="mode-desc">Intermediate principles</div>
+                </button>
+                <button class="mode-btn" onclick="startGame('Hard')">
+                    <div class="mode-icon">🔴</div>
+                    <div class="mode-title">Hard</div>
+                    <div class="mode-desc">Advanced calculations</div>
+                </button>
+                <button class="mode-btn" onclick="startGame('Responsive')">
+                    <div class="mode-icon">🌈</div>
+                    <div class="mode-title">Responsive</div>
+                    <div class="mode-desc">Adaptive difficulty</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Score</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="current-question">0</div>
+                <div class="stat-label">Question</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="total-questions">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+        </div>
+
+        <div class="buttons" id="progress-buttons" style="display: none; margin-bottom: 30px;">
+            <button onclick="showReviewMidGame()" id="review-progress-btn" disabled>Review Progress</button>
+        </div>
+
+        <div class="loading" id="loading">Loading questions...</div>
+
+        <div class="question-card" id="question-card" style="display: none;">
+            <div class="question" id="question-text"></div>
+            <ul class="options" id="options-list"></ul>
+            <div class="explanation" id="explanation"></div>
+            <div class="buttons">
+                <button id="submit-btn" onclick="submitAnswer()" disabled>Submit Answer</button>
+                <button id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+            </div>
+        </div>
+
+        <div class="game-over" id="game-over">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <img src="ProfSri.png" alt="Prof Sri" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid white; box-shadow: 0 6px 16px rgba(0,0,0,0.15); margin-right: 15px;">
+                <h2 style="margin: 0;">🎉 Well Done!</h2>
+            </div>
+            <div class="final-score" id="final-score"></div>
+            <p id="final-message"></p>
+            <div class="buttons">
+                <button onclick="showReview()">Review Answers</button>
+                <button onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+
+        <div class="review-page" id="review-page">
+            <h2>📋 Review Your Answers</h2>
+            <div class="review-summary" id="review-summary"></div>
+            <div class="retry-section" id="retry-section" style="display: none;">
+                <div class="missed-questions-count" id="missed-count"></div>
+                <p>Would you like to retry just the questions you got wrong?</p>
+                <div class="buttons">
+                    <button onclick="startRetryMode()">Retry Missed Questions</button>
+                    <button onclick="showFullReview()">Continue Reviewing</button>
+                </div>
+            </div>
+            <div id="review-content"></div>
+            <div class="buttons">
+                <button onclick="restartGame()">Start Over</button>
+                <button onclick="backToResults()" id="back-to-game-btn">Continue Game</button>
+            </div>
+        </div>
+
+        <div class="retry-mode" id="retry-mode">
+            <div class="retry-header">
+                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                    <img src="ProfSri.png" alt="Prof Sri" style="width: 50px; height: 50px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-right: 12px;">
+                    <h2 style="margin: 0;">🔄 Retry with Prof Sri</h2>
+                </div>
+                <p>Question <span id="retry-current">1</span> of <span id="retry-total">0</span></p>
+            </div>
+            <div class="question-card" id="retry-question-card">
+                <div class="question" id="retry-question-text"></div>
+                <ul class="options" id="retry-options-list"></ul>
+                <div class="explanation" id="retry-explanation"></div>
+                <div class="buttons">
+                    <button id="retry-submit-btn" onclick="submitRetryAnswer()" disabled>Submit Answer</button>
+                    <button id="retry-next-btn" onclick="nextRetryQuestion()" style="display: none;">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedAnswer = null;
+        let answeredQuestions = [];
+        let retryQuestions = [];
+        let retryIndex = 0;
+        let retryScore = 0;
+        let retrySelectedAnswer = null;
+
+        async function loadQuestions() {
+            try {
+                const response = await fetch('questions.json');
+                allQuestions = await response.json();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('mode-selection').style.display = 'block';
+            } catch (error) {
+                document.getElementById('loading').innerHTML = 'Error loading questions. Make sure questions.json is in the same folder.';
+                console.error('Error loading questions:', error);
+            }
+        }
+
+        function startGame(mode) {
+            gameMode = mode;
+            document.getElementById('mode-selection').style.display = 'none';
+
+            if (mode === 'Responsive') {
+                questions = [...allQuestions];
+                responsiveLevel = 'Easy';
+                consecutiveCorrect = 0;
+                consecutiveWrong = 0;
+                document.getElementById('total-questions').textContent = '20';
+            } else {
+                questions = shuffleArray(allQuestions.filter(q => q.difficulty === mode));
+                document.getElementById('total-questions').textContent = questions.length;
+            }
+
+            currentQuestionIndex = 0;
+            score = 0;
+            answeredQuestions = [];
+            selectedAnswer = null;
+
+            document.getElementById('score').textContent = '0';
+            document.getElementById('current-question').textContent = '0';
+
+            showQuestion();
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function showQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                endGame();
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            document.getElementById('question-card').style.display = 'block';
+            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+
+            // Show progress buttons if user has answered at least one question
+            if (answeredQuestions.length > 0) {
+                document.getElementById('progress-buttons').style.display = 'block';
+                document.getElementById('review-progress-btn').disabled = false;
+            }
+
+            const optionsList = document.getElementById('options-list');
+            optionsList.innerHTML = '';
+
+            question.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.className = 'option';
+                li.textContent = option;
+                li.onclick = () => selectAnswer(index, li);
+                optionsList.appendChild(li);
+            });
+
+            document.getElementById('explanation').style.display = 'none';
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').style.display = 'inline-block';
+            document.getElementById('next-btn').style.display = 'none';
+            selectedAnswer = null;
+        }
+
+        function selectAnswer(answerIndex, element) {
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            element.classList.add('selected');
+            selectedAnswer = answerIndex;
+            document.getElementById('submit-btn').disabled = false;
+        }
+
+        function submitAnswer() {
+            if (selectedAnswer === null) return;
+
+            const question = questions[currentQuestionIndex];
+            const isCorrect = selectedAnswer === question.correct;
+
+            if (isCorrect) {
+                score++;
+                document.getElementById('score').textContent = score;
+            }
+
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                opt.onclick = null;
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                } else if (index === selectedAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            document.getElementById('explanation').innerHTML = `
+                <strong>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</strong><br>
+                ${question.explanation}
+            `;
+            document.getElementById('explanation').style.display = 'block';
+
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'inline-block';
+
+            answeredQuestions.push({
+                questionId: question.id,
+                question: question.question,
+                selectedAnswer: question.options[selectedAnswer],
+                correctAnswer: question.options[question.correct],
+                explanation: question.explanation,
+                isCorrect: isCorrect,
+                options: question.options,
+                correctIndex: question.correct
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function endGame() {
+            document.getElementById('question-card').style.display = 'none';
+            document.getElementById('game-over').style.display = 'block';
+
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('final-score').textContent = `${score}/${questions.length}`;
+
+            let message = '';
+            if (percentage >= 90) {
+                message = '"Outstanding! You have a strong grasp of accounting fundamentals!" - Prof Sri 🌟';
+            } else if (percentage >= 75) {
+                message = '"Great job! You understand most accounting concepts well!" - Prof Sri 👍';
+            } else if (percentage >= 60) {
+                message = '"Good effort! Review the explanations and try again to improve!" - Prof Sri 📚';
+            } else {
+                message = '"Keep studying! Practice makes perfect in accounting!" - Prof Sri 💪';
+            }
+
+            document.getElementById('final-message').textContent = message;
+        }
+
+        function restartGame() {
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswer = null;
+            answeredQuestions = [];
+            retryQuestions = [];
+            retryIndex = 0;
+            retryScore = 0;
+            gameMode = '';
+            responsiveLevel = 'Easy';
+            consecutiveCorrect = 0;
+            consecutiveWrong = 0;
+
+            document.getElementById('score').textContent = '0';
+            document.getElementById('game-over').style.display = 'none';
+            document.getElementById('review-page').style.display = 'none';
+            document.getElementById('retry-mode').style.display = 'none';
+            document.getElementById('progress-buttons').style.display = 'none';
+            document.getElementById('question-card').style.display = 'none';
+            document.getElementById('mode-selection').style.display = 'block';
+        }
+
+        function showReview() {
+            document.getElementById('game-over').style.display = 'none';
+            document.getElementById('review-page').style.display = 'block';
+
+            const correctCount = answeredQuestions.filter(q => q.isCorrect).length;
+            const incorrectCount = answeredQuestions.length - correctCount;
+
+            document.getElementById('review-summary').innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <img src="ProfSri.png" alt="Prof Sri" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-right: 12px;">
+                    <h3 style="margin: 0;">Performance Review</h3>
+                </div>
+                <p><strong>Correct:</strong> ${correctCount} | <strong>Incorrect:</strong> ${incorrectCount} | <strong>Total:</strong> ${answeredQuestions.length}</p>
+                <p><strong>Score:</strong> ${Math.round((correctCount / answeredQuestions.length) * 100)}%</p>
+            `;
+
+            if (incorrectCount > 0) {
+                document.getElementById('retry-section').style.display = 'block';
+                document.getElementById('missed-count').textContent = `You missed ${incorrectCount} question${incorrectCount > 1 ? 's' : ''}`;
+            }
+
+            showFullReview();
+        }
+
+        function showFullReview() {
+            document.getElementById('retry-section').style.display = 'none';
+
+            const reviewContent = document.getElementById('review-content');
+            reviewContent.innerHTML = '';
+
+            answeredQuestions.forEach((answer, index) => {
+                const reviewItem = document.createElement('div');
+                reviewItem.className = `review-item ${answer.isCorrect ? 'correct' : 'incorrect'}`;
+
+                reviewItem.innerHTML = `
+                    <div class="review-question">
+                        <strong>Question ${index + 1}:</strong> ${answer.question}
+                    </div>
+                    <div class="review-answers">
+                        <div class="review-your-answer ${answer.isCorrect ? '' : 'review-incorrect-answer'}">
+                            <strong>Your Answer:</strong> ${answer.selectedAnswer} ${answer.isCorrect ? '✅' : '❌'}
+                        </div>
+                        ${!answer.isCorrect ? `
+                            <div class="review-correct-answer">
+                                <strong>Correct Answer:</strong> ${answer.correctAnswer} ✅
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="review-explanation">
+                        <strong>Explanation:</strong> ${answer.explanation}
+                    </div>
+                `;
+
+                reviewContent.appendChild(reviewItem);
+            });
+        }
+
+        function backToResults() {
+            document.getElementById('review-page').style.display = 'none';
+            if (currentQuestionIndex >= questions.length) {
+                document.getElementById('game-over').style.display = 'block';
+            } else {
+                document.getElementById('question-card').style.display = 'block';
+                document.getElementById('progress-buttons').style.display = 'block';
+            }
+        }
+
+        function showReviewMidGame() {
+            document.getElementById('question-card').style.display = 'none';
+            document.getElementById('progress-buttons').style.display = 'none';
+            document.getElementById('review-page').style.display = 'block';
+
+            const correctCount = answeredQuestions.filter(q => q.isCorrect).length;
+            const incorrectCount = answeredQuestions.length - correctCount;
+
+            document.getElementById('review-summary').innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <img src="ProfSri.png" alt="Prof Sri" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-right: 12px;">
+                    <h3 style="margin: 0;">Progress Review</h3>
+                </div>
+                <p><strong>Questions Answered:</strong> ${answeredQuestions.length} of ${questions.length}</p>
+                <p><strong>Correct:</strong> ${correctCount} | <strong>Incorrect:</strong> ${incorrectCount}</p>
+                <p><strong>Current Score:</strong> ${answeredQuestions.length > 0 ? Math.round((correctCount / answeredQuestions.length) * 100) : 0}%</p>
+            `;
+
+            if (incorrectCount > 0) {
+                document.getElementById('retry-section').style.display = 'block';
+                document.getElementById('missed-count').textContent = `You missed ${incorrectCount} question${incorrectCount > 1 ? 's' : ''} so far`;
+            } else {
+                document.getElementById('retry-section').style.display = 'none';
+            }
+
+            showFullReview();
+        }
+
+        function startRetryMode() {
+            retryQuestions = answeredQuestions.filter(q => !q.isCorrect);
+            retryIndex = 0;
+            retryScore = 0;
+
+            document.getElementById('review-page').style.display = 'none';
+            document.getElementById('retry-mode').style.display = 'block';
+            document.getElementById('retry-total').textContent = retryQuestions.length;
+
+            showRetryQuestion();
+        }
+
+        function showRetryQuestion() {
+            if (retryIndex >= retryQuestions.length) {
+                endRetryMode();
+                return;
+            }
+
+            const questionData = retryQuestions[retryIndex];
+            document.getElementById('retry-current').textContent = retryIndex + 1;
+            document.getElementById('retry-question-text').textContent = questionData.question;
+
+            const optionsList = document.getElementById('retry-options-list');
+            optionsList.innerHTML = '';
+
+            questionData.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.className = 'option';
+                li.textContent = option;
+                li.onclick = () => selectRetryAnswer(index, li);
+                optionsList.appendChild(li);
+            });
+
+            document.getElementById('retry-explanation').style.display = 'none';
+            document.getElementById('retry-submit-btn').disabled = true;
+            document.getElementById('retry-submit-btn').style.display = 'inline-block';
+            document.getElementById('retry-next-btn').style.display = 'none';
+            retrySelectedAnswer = null;
+        }
+
+        function selectRetryAnswer(answerIndex, element) {
+            document.querySelectorAll('#retry-options-list .option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            element.classList.add('selected');
+            retrySelectedAnswer = answerIndex;
+            document.getElementById('retry-submit-btn').disabled = false;
+        }
+
+        function submitRetryAnswer() {
+            if (retrySelectedAnswer === null) return;
+
+            const questionData = retryQuestions[retryIndex];
+            const isCorrect = retrySelectedAnswer === questionData.correctIndex;
+
+            if (isCorrect) {
+                retryScore++;
+            }
+
+            document.querySelectorAll('#retry-options-list .option').forEach((opt, index) => {
+                opt.onclick = null;
+                if (index === questionData.correctIndex) {
+                    opt.classList.add('correct');
+                } else if (index === retrySelectedAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            document.getElementById('retry-explanation').innerHTML = `
+                <strong>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</strong><br>
+                ${questionData.explanation}
+            `;
+            document.getElementById('retry-explanation').style.display = 'block';
+
+            document.getElementById('retry-submit-btn').style.display = 'none';
+            document.getElementById('retry-next-btn').style.display = 'inline-block';
+        }
+
+        function nextRetryQuestion() {
+            retryIndex++;
+            showRetryQuestion();
+        }
+
+        function endRetryMode() {
+            document.getElementById('retry-mode').style.display = 'none';
+            document.getElementById('game-over').style.display = 'block';
+
+            const retryPercentage = Math.round((retryScore / retryQuestions.length) * 100);
+
+            let retryMessage = `Retry Results: ${retryScore}/${retryQuestions.length} (${retryPercentage}%)<br><br>`;
+
+            if (retryPercentage >= 75) {
+                retryMessage += '"Great improvement! You\'ve mastered those concepts!" - Prof Sri 🌟';
+            } else if (retryPercentage >= 50) {
+                retryMessage += '"Good progress! Keep reviewing and practicing!" - Prof Sri 👍';
+            } else {
+                retryMessage += '"Keep studying those concepts - practice makes perfect!" - Prof Sri 📚';
+            }
+
+            document.getElementById('final-message').innerHTML = retryMessage;
+        }
+
+        window.onload = loadQuestions;
+    </script>
+</body>
+</html>
