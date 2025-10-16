@@ -343,6 +343,76 @@
             background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
             color: #3730a3;
         }
+        .prof-speech-bubble {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 20px 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+            display: none;
+            border: 3px solid #2563eb;
+            animation: bounceIn 0.5s ease-out;
+        }
+        .prof-speech-bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: #2563eb transparent transparent transparent;
+        }
+        .prof-speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 52px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 8px 0 8px;
+            border-color: white transparent transparent transparent;
+        }
+        .prof-speech-content {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        .prof-speech-image {
+            position: absolute;
+            bottom: -60px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes bounceIn {
+            0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+            70% { transform: translate(-50%, -50%) scale(0.9); }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        .speech-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 999;
+            display: none;
+        }
         .review-page {
             display: none;
         }
@@ -568,18 +638,21 @@
             </div>
         </div>
 
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-value" id="score">0</div>
-                <div class="stat-label">Score</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="current-question">0</div>
-                <div class="stat-label">Question</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="total-questions">0</div>
-                <div class="stat-label">Total</div>
+        <div class="results-section" id="results-section" style="display: none;">
+            <h2 style="text-align: center; color: #1a365d; font-size: 1.5rem; margin-bottom: 25px; font-weight: 600;">Results:</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="current-question">0</div>
+                    <div class="stat-label">Question</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="total-questions">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
             </div>
         </div>
 
@@ -660,6 +733,21 @@
         let retryIndex = 0;
         let retryScore = 0;
         let retrySelectedAnswer = null;
+        let messageIndex = 0;
+
+        // Prof Sri's congratulations messages (cycling through 3)
+        const congratsMessages = [
+            "Excellent work! You're mastering these accounting concepts! 🌟",
+            "Outstanding! That's the kind of precision I like to see! 👏",
+            "Brilliant! You're thinking like a true accountant! 💼"
+        ];
+
+        // Prof Sri's encouragement messages (cycling through 3)
+        const encouragementMessages = [
+            "Don't worry! Learning accounting takes practice. Let's keep going! 💪",
+            "That's okay! Every mistake is a learning opportunity. You've got this! 📚",
+            "No problem! Even experienced accountants had to start somewhere. Stay focused! 🎯"
+        ];
 
         async function loadQuestions() {
             try {
@@ -695,6 +783,9 @@
 
             document.getElementById('score').textContent = '0';
             document.getElementById('current-question').textContent = '0';
+
+            // Show the results section
+            document.getElementById('results-section').style.display = 'block';
 
             showQuestion();
         }
@@ -782,6 +873,11 @@
             document.getElementById('submit-btn').style.display = 'none';
             document.getElementById('next-btn').style.display = 'inline-block';
 
+            // Show Prof Sri's speech bubble
+            setTimeout(() => {
+                showProfSpeech(isCorrect);
+            }, 800);
+
             answeredQuestions.push({
                 questionId: question.id,
                 question: question.question,
@@ -839,6 +935,7 @@
             document.getElementById('retry-mode').style.display = 'none';
             document.getElementById('progress-buttons').style.display = 'none';
             document.getElementById('question-card').style.display = 'none';
+            document.getElementById('results-section').style.display = 'none';
             document.getElementById('mode-selection').style.display = 'block';
         }
 
@@ -1014,6 +1111,11 @@
 
             document.getElementById('retry-submit-btn').style.display = 'none';
             document.getElementById('retry-next-btn').style.display = 'inline-block';
+
+            // Show Prof Sri's speech bubble in retry mode too
+            setTimeout(() => {
+                showProfSpeech(isCorrect);
+            }, 800);
         }
 
         function nextRetryQuestion() {
@@ -1040,7 +1142,30 @@
             document.getElementById('final-message').innerHTML = retryMessage;
         }
 
+        function showProfSpeech(isCorrect) {
+            const messages = isCorrect ? congratsMessages : encouragementMessages;
+            const message = messages[messageIndex % messages.length];
+            messageIndex++;
+
+            document.getElementById('speech-content').textContent = message;
+            document.getElementById('speech-overlay').style.display = 'block';
+            document.getElementById('prof-speech-bubble').style.display = 'block';
+        }
+
+        function closeSpeechBubble() {
+            document.getElementById('speech-overlay').style.display = 'none';
+            document.getElementById('prof-speech-bubble').style.display = 'none';
+        }
+
         window.onload = loadQuestions;
     </script>
+
+    <!-- Prof Sri Speech Bubble -->
+    <div class="speech-overlay" id="speech-overlay" onclick="closeSpeechBubble()"></div>
+    <div class="prof-speech-bubble" id="prof-speech-bubble">
+        <div class="prof-speech-content" id="speech-content"></div>
+        <button onclick="closeSpeechBubble()" style="background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 500; cursor: pointer;">Continue</button>
+        <img src="ProfSri.png" alt="Prof Sri" class="prof-speech-image">
+    </div>
 </body>
 </html>
