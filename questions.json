@@ -369,5 +369,50 @@
     "correct": 0,
     "difficulty": "Hard",
     "explanation": "Gross AR March 31 = €90M + €50M = €140M. Gross AR June 30 = €100M + €70M = €170M. Write-offs = Beginning Allowance + Bad Debt Expense - Ending Allowance = €50M + €40M - €70M = €20M. Credit Sales = Ending Gross AR - Beginning Gross AR + Collections + Write-offs = €170M - €140M + €150M + €20M = €200M."
+  },
+  {
+    "id": 38,
+    "question": "Kellogg Associates Limited (KAL) reported following data for the last two years (in $ thousands): Balance in Accounts Receivables, gross - 12/31/2025: $900, 12/31/2024: $800. Balance in Allowance for uncollectibles - 12/31/2025: $50, 12/31/2024: $30. KAL reported revenues of $3,200 for the year ended 12/31/2025. Assume there were no write-offs of its accounts receivables during the year ended 12/31/2025. Assuming that KAL made all its sales on account during the year ended 12/31/2025, determine its cash collections from accounts receivables during the year ended 12/31/2025. All the options provided below are in $ thousands.",
+    "options": [
+      "$3,100",
+      "$2,100",
+      "$1,900",
+      "$2,000",
+      "$800",
+      "none of the other choices"
+    ],
+    "correct": 0,
+    "difficulty": "Hard",
+    "explanation": "Cash collections = Beginning AR + Sales - Ending AR = $800 + $3,200 - $900 = $3,100. The allowance accounts don't affect the cash collection calculation when there are no write-offs."
+  },
+  {
+    "id": 39,
+    "question": "Kellogg Associates Limited (KAL) reported following data (in $ thousands): Balance in Accounts Receivables, gross - 12/31/2025: $900, 12/31/2024: $800. Balance in Allowance for uncollectibles - 12/31/2025: $50, 12/31/2024: $30. KAL received cash of $4,100 from its accounts receivables during the year ended 12/31/2025. The firm also recognized revenues of $4,300 during the year ended 12/31/2025. All its sales were on account during the year ended 12/31/2025. Determine the bad debts expense for KAL for the year ended 12/31/2025. All the options provided below are in $ thousands.",
+    "options": [
+      "$50",
+      "$130",
+      "$220",
+      "$120",
+      "$190",
+      "None of the other choices"
+    ],
+    "correct": 3,
+    "difficulty": "Hard",
+    "explanation": "First find write-offs: Ending AR = Beginning AR + Sales - Collections - Write-offs. $900 = $800 + $4,300 - $4,100 - Write-offs. Write-offs = $100. Bad debt expense = Ending Allowance - Beginning Allowance + Write-offs = $50 - $30 + $100 = $120."
+  },
+  {
+    "id": 40,
+    "question": "Kellogg Associates Limited (KAL) reported following data (in $ thousands): Balance in Accounts Receivables, gross - 12/31/2025: $900, 12/31/2024: $800. Balance in Allowance for uncollectibles - 12/31/2025: $50, 12/31/2024: $30. The firm recognized revenues of $5,000 during the year ended 12/31/2025. All its sales were on account during the year ended 12/31/2025. The firm recognized bad debts expense of $600 for the year ended 12/31/2025. Determine the cash received from its accounts receivables during the year ended 12/31/2025. All the options provided below are in $ thousands.",
+    "options": [
+      "$4,900",
+      "$5,100",
+      "$5,000",
+      "$4,420",
+      "$4,320",
+      "None of the other choices"
+    ],
+    "correct": 4,
+    "difficulty": "Hard",
+    "explanation": "First find write-offs: Write-offs = Beginning Allowance + Bad Debt Expense - Ending Allowance = $30 + $600 - $50 = $580. Cash collections = Beginning AR + Sales - Ending AR - Write-offs = $800 + $5,000 - $900 - $580 = $4,320."
   }
 ]
